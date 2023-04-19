@@ -1,0 +1,201 @@
+[
+{
+  "model": "accounts.account",
+  "pk": 32,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$lLQpAo2oEYe2WGaMhHHsgE$tlcb7hoKnpKITh1SpE6VinVc+SWso3CD/IZufMfjROY=",
+    "last_login": "2023-03-28T13:15:08.989Z",
+    "is_superuser": true,
+    "username": "root@root.ru",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-03-28T12:03:25.302Z",
+    "email": "root@root.ru",
+    "avatar": "avatars/no_image.png",
+    "user_info": null,
+    "phone_number": null,
+    "gender": null,
+    "groups": [],
+    "user_permissions": [],
+    "liked_posts": [],
+    "subscriptions": [],
+    "commented_posts": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 33,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$H1chJef1eMEQP1WisYxwL4$D+goZX+ENRi1RSCneLSQhEEiAxTtuK9jF9CKyXD/9/I=",
+    "last_login": "2023-04-19T15:14:01.575Z",
+    "is_superuser": false,
+    "username": "jane",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-03-28T12:05:32.274Z",
+    "email": "janedoe@gmail.com",
+    "avatar": "avatars/jane_doQp1Md.jpg",
+    "user_info": null,
+    "phone_number": null,
+    "gender": null,
+    "groups": [],
+    "user_permissions": [],
+    "liked_posts": [],
+    "subscriptions": [
+      34
+    ],
+    "commented_posts": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 34,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$GLGcVML8Vt8r1KHsNlyNCp$YZHDLpgaQ84keAQrn5lRuml26AuKqIOE4s5OPk8vfak=",
+    "last_login": "2023-03-28T13:16:33.506Z",
+    "is_superuser": false,
+    "username": "bob",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-03-28T12:07:58.609Z",
+    "email": "bobdoe@gmail.com",
+    "avatar": "avatars/bob_oqKd2I4.jpg",
+    "user_info": null,
+    "phone_number": null,
+    "gender": null,
+    "groups": [],
+    "user_permissions": [],
+    "liked_posts": [
+      16,
+      15,
+      17,
+      18
+    ],
+    "subscriptions": [
+      37
+    ],
+    "commented_posts": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 37,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$kwdAsXWspYFi7rbpWyxCpG$M0+tOAEUWxEw7gVvcevvlLkgpGrOuOuqRLiXr/rxMUs=",
+    "last_login": "2023-04-19T16:23:48.009Z",
+    "is_superuser": false,
+    "username": "ivan_javascript",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-04-19T16:23:47.806Z",
+    "email": "ivan_javascript@mail.ru",
+    "avatar": "avatars/capybara_w1LLosl.jpeg",
+    "user_info": null,
+    "phone_number": null,
+    "gender": null,
+    "groups": [],
+    "user_permissions": [],
+    "liked_posts": [
+      17,
+      18
+    ],
+    "subscriptions": [],
+    "commented_posts": []
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 15,
+  "fields": {
+    "description": "This is my dog",
+    "image": "posts/jane_dog.jpeg",
+    "author": 33,
+    "created_at": "2023-03-28T12:06:20.132Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 16,
+  "fields": {
+    "description": "My house",
+    "image": "posts/jane_house.jpg",
+    "author": 33,
+    "created_at": "2023-03-28T12:07:23.300Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 17,
+  "fields": {
+    "description": "My dog",
+    "image": "posts/bob_dog.jpeg",
+    "author": 34,
+    "created_at": "2023-03-28T12:08:42.437Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 18,
+  "fields": {
+    "description": "My house",
+    "image": "posts/bob_house.webp",
+    "author": 34,
+    "created_at": "2023-03-28T12:09:25.083Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 19,
+  "fields": {
+    "description": "My house",
+    "image": "posts/jane_house_NCPMOmc.jpg",
+    "author": 33,
+    "created_at": "2023-04-19T15:15:35.589Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 20,
+  "fields": {
+    "description": "test product",
+    "image": "posts/capybara.jpeg",
+    "author": 37,
+    "created_at": "2023-04-19T16:54:26.140Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 3,
+  "fields": {
+    "author": 34,
+    "post": 16,
+    "text": "Beautiful"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 4,
+  "fields": {
+    "author": 34,
+    "post": 15,
+    "text": "Just like mine"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 5,
+  "fields": {
+    "author": 37,
+    "post": 20,
+    "text": "Я"
+  }
+}
+]
