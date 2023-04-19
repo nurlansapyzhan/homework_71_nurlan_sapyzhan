@@ -44,12 +44,28 @@ class PostDeleteAPIView(APIView):
 class PostCreateAPIView(APIView):
     def post(self, request):
         posts = Post.objects.all()
-        posts_count = posts.count()
-        posts_count += 1
+        id_list = []
+        for post in posts:
+            id_list.append(post.id)
+        id_list.sort()
+        last_id = id_list[-1]
+        last_id += 1
         serializer = PostCreateSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(id=posts_count, author_id=request.auth.user_id)
+            serializer.save(id=last_id, author_id=request.auth.user_id)
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
 
 
+class LikeAPIView(APIView):
+    def post(self, request, pk):
+        post = get_object_or_404(Post, pk=pk)
+        user = request.user
+        if user in post.user_likes.all():
+            post.user_likes.remove(user)
+            post.save()
+            return Response({"like_info": "unliked"})
+        else:
+            post.user_likes.add(user)
+            post.save()
+            return Response({"like_info": "liked"})
