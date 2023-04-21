@@ -1,14 +1,12 @@
-from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.db.models import Q
 from django.shortcuts import redirect, get_object_or_404, render
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse
 from django.utils.http import urlencode
 from django.views import View
 from django.views.generic import CreateView, ListView
 
-from accounts.models import Account
 from posts.forms import SearchForm, CommentPostForm
 from posts.models import Post, Comment
 
@@ -80,9 +78,10 @@ class CreateCommentView(View):
 
     def get(self, request, pk):
         post = Post.objects.get(pk=pk)
+        like_count = post.user_likes.count()
         form = CommentPostForm()
         comments = Comment.objects.filter(post=post).order_by('pk')
-        context = {'post': post, 'form': form, 'comments': comments}
+        context = {'post': post, 'form': form, 'comments': comments, 'like_count': like_count}
         return render(request, 'post_detail.html', context)
 
     def post(self, request, pk):

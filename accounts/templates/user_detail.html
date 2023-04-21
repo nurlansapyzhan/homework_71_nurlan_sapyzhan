@@ -24,8 +24,12 @@
                 <p class="counter_custom">{{ subscriber_count }} подписок</p>
                 <p class="counter_custom">{{ subscription_count }} подписчиков</p>
             </div>
-            <p><b>{{ user_obj.first_name }}</b></p>
-            <p>{{ user_obj.user_info }}</p>
+            {% if user_obj.first_name %}
+                <p><b>{{ user_obj.first_name }}</b></p>
+            {% endif %}
+            {% if user_obj.user_info %}
+                <p>{{ user_obj.user_info }}</p>
+            {% endif %}
         </div>
     </div>
     <div class="post_div mt-5">
